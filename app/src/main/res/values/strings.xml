@@ -1,0 +1,99 @@
+<resources>
+    <!-- アプリ全体の名前 -->
+    <string name="app_name">Kusuri</string>
+
+    <!--    体調管理一覧のラベル-->
+    <string name="da_medicine_list">体調管理一覧</string>
+    <string name="da_new_registration">新規登録</string>
+    <string name="da_hc_redact">編集</string>
+    <string name="da_hc_remove">削除</string>
+
+    <!-- ボトムナビゲーションの項目 -->
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">お薬管理アプリ</string>
+    <string name="title_notifications">お薬管理アプリ</string>
+    <string name="title_health">体調管理</string> <!-- 体調管理のメニュー項目 -->
+
+    <!-- 体調管理画面のラベル -->
+    <string name="health_management">体調管理</string>
+    <string name="temperature">体温 (℃)</string>
+    <string name="blood_pressure">血圧 (mmHg)</string>
+    <string name="weight">体重 (Kg)</string>
+    <string name="blood_sugar">血糖値 (mg/dl)</string>
+
+    <!-- ボタンのテキスト -->
+    <string name="da_register">登録</string>
+    <string name="da_cancel">キャンセル</string>
+
+
+
+
+    <!--    お薬一覧のラベル-->
+    <string name="no_medicine_list">おくすり一覧</string>
+    <string name="no_new_registration">新規登録</string>
+    <string name="da_md_redact">編集</string>
+    <string name="da_md_remove">削除</string>
+
+
+
+    <!-- お薬登録画面のラベル -->
+    <string name="medicine_registration_title">お薬登録画面</string>
+    <string name="medicine_name_label">おくすり名</string>
+    <string name="dosage_label">服用量</string>
+    <string name="dosage_labelday">(1日)</string>
+    <string name="dose_count_label">服用回数</string>
+    <string name="dose_count_labelkai">回</string>
+    <string name="use_period_label">服用期間</string>
+    <string name="memo_label">メモ</string>
+    <string name="notification">通知</string>
+
+    <!-- Spinner の選択肢 -->
+    <string-array name="dosage_options">
+        <item>錠</item>
+        <item>包</item>
+    </string-array>
+
+    <!-- お薬の服用タイミングSpinner の選択肢 -->
+    <string-array name="MDtiming">
+        <item>食前</item>
+        <item>食後</item>
+        <item>食間</item>
+        <item>就寝前</item>
+        <item>頓服</item>
+    </string-array>
+
+    <!-- 血糖値（食前・食後）Spinner の選択肢 -->
+    <string-array name="HCtiming">
+        <item>食前</item>
+        <item>食後</item>
+    </string-array>
+<!--    <string-array name="dose_count_options">-->
+<!--        <item>1回</item>-->
+<!--        <item>2回</item>-->
+<!--        <item>3回</item>-->
+<!--        <item>4回</item>-->
+<!--    </string-array>-->
+
+    <string-array name="use_period_options">
+        <item>1日</item>
+        <item>3日</item>
+        <item>7日</item>
+        <item>30日</item>
+    </string-array>
+    <!-- 通知オプション -->
+    <string-array name="notification_options">
+        <item>あり</item>
+        <item>なし</item>
+    </string-array>
+
+    <!-- ボタンのテキスト -->
+    <string name="picker_button">服用時間を設定する</string>
+    <string name="no_register">登録</string>
+    <string name="no_cancel">キャンセル</string>
+
+<!--    カメラ機能に関するテキスト-->
+    <string name="camera_icon_description">カメラを起動するアイコン</string>
+    <string name="select_icon_description">写真を選択するアイコン</string>
+    <string name="delete_icon_description">撮影した写真を削除するアイコン</string>
+
+</resources>

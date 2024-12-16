@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 外部ストレージへの書き込み許可（Android 9以下に必要） -->
+<!--    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Kusuri"
+        tools:targetApi="31">
+
+        <!-- MainActivityの設定 -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:text="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- NotificationActivityを追加 -->
+        <activity
+            android:name=".ui.notifications.NotificationsActivity"
+            android:exported="true" />
+
+        <!-- DashboardActivityを追加 -->
+        <activity android:name=".ui.dashboard.DashboardActivity" />
+
+        <!-- FileProviderの設定 -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.websarva.wings.android.kusuri.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <receiver android:name="com.websarva.wings.android.kusuri.ui.notifications.MedicationReminderReceiver" />
+
+    </application>
+
+</manifest>

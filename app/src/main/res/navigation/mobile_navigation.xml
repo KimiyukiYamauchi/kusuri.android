@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.websarva.wings.android.kusuri.ui.home.HomeFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.websarva.wings.android.kusuri.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/activity_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.websarva.wings.android.kusuri.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <!-- EditMedicationFragment を新規追加 -->
+    <fragment
+        android:id="@+id/navigation_editmedication"
+        android:name="com.websarva.wings.android.kusuri.ui.notifications.EditMedicationFragment"
+        android:label="お薬一覧(編集)"
+        tools:layout="@layout/fragment_edit_medication">
+        <!-- 薬のIDを渡すための引数を定義 -->
+        <argument
+            android:name="medicationId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_addmedication"
+        android:name="com.websarva.wings.android.kusuri.ui.notifications.NotificationsFragment"
+        android:label=" お薬一覧"
+        tools:layout="@layout/fragment_notifications" />
+
+
+    <!-- MedicationListFragment から AddMedicationFragment へのアクションを追加 -->
+    <action
+        android:id="@+id/action_medicationListFragment_to_notificationsFragment"
+        app:destination="@id/navigation_addmedication" />
+
+
+    <!-- MedicationListFragment から EditMedicationFragment へのアクション -->
+    <action
+        android:id="@+id/action_medicationListFragment_to_editMedicationFragment"
+        app:destination="@id/navigation_editmedication" />
+
+
+    <fragment
+        android:id="@+id/navigation_edit_healthcare"
+        android:name="com.websarva.wings.android.kusuri.ui.dashboard.EditHealthCareFragment"
+        android:label="健康管理編集"
+        tools:layout="@layout/fragment_edit_healthcare">
+        <!-- 必要に応じて引数を定義 -->
+        <argument
+            android:name="healthCareId"
+            app:argType="integer" />
+    </fragment>
+    <!-- EditHealthCareFragment へのアクション -->
+    <action
+        android:id="@+id/action_healthCareFragment_to_editHealthCareFragment"
+        app:destination="@id/navigation_edit_healthcare" />
+
+
+
+</navigation>

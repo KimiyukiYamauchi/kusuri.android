@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/transparent" /><!-- 背景色を透明に設定 -->
+    <!-- 枠線の太さ -->
+    <!-- 枠線の色を黒に設定 -->
+    <stroke
+        android:width="1dp"
+    android:color="#000000" />
+    <padding
+        android:left="5dp"
+        android:top="5dp"
+        android:right="5dp"
+        android:bottom="7dp" />
+    <corners android:radius="4dp" /> <!-- 角を少し丸める -->
+</shape>

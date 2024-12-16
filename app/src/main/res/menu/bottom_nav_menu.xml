@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_calendar"
+        android:title="カレンダー" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_taityou"
+        android:title="体調管理" />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/ic_medicine"
+        android:title="お薬登録" />
+
+</menu>
+
