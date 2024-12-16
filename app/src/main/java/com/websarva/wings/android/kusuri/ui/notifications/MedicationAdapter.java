@@ -34,6 +34,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class MedicationAdapter extends RecyclerView.Adapter<MedicationAdapter.MedicationViewHolder> {
     private List<Medication> medicationList;
@@ -176,32 +177,25 @@ public class MedicationAdapter extends RecyclerView.Adapter<MedicationAdapter.Me
 
             // savedDates キーに保存されている値を取得
             Set<String> savedDates = preferences.getStringSet("saved_dates", new HashSet<>());
+            Log.d("HomeFragment", "removeBlueDotForDateRange savedDates = " + savedDates);
 
-            if (savedDates == null) {
-                return; // savedDatesがnullの場合は処理を終了
-            }
-
-//            regex = dateKey + "(_\\d+)?";
-            regex = dateKey+ "*";
+            regex = dateKey + "(_\\d+)?";
             Log.d("HomeFragment", "removeBlueDotForDateRange savedDates regex = " + regex);
-            pattern = Pattern.compile(regex);
+            Pattern pattern2 = Pattern.compile(regex);
 
             // 削除対象を探す
-            Set<String> updatedDates = new HashSet<>();
-            for (String date : savedDates) {
-                Log.d("HomeFragment", "removeBlueDotForDateRange savedDates date = "
-                        + date + " pattern.matcher(date).matches()" + pattern.matcher(date).matches());
-
-                // 正規表現に一致しないものを新しいセットに追加
-                if (!pattern.matcher(date).matches()) {
-                    updatedDates.add(date);
-                }
-            }
-
+            Set<String> updatedDates = savedDates.stream()
+                    .filter(date -> !pattern2.matcher(date).matches())
+                    .collect(Collectors.toSet());
             editor.putStringSet("saved_dates", updatedDates);
+
+            Log.d("HomeFragment", "removeBlueDotForDateRange updatedDates = " + updatedDates);
 
             // カレンダーを1日進める
             startCalendar.add(Calendar.DAY_OF_MONTH, 1);
+
+            // 変更を保存
+            editor.apply();
         }
 
 
