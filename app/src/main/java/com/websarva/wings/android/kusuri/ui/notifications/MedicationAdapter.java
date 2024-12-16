@@ -182,7 +182,7 @@ public class MedicationAdapter extends RecyclerView.Adapter<MedicationAdapter.Me
             }
 
 //            regex = dateKey + "(_\\d+)?";
-            regex = dateKey;
+            regex = dateKey+ "*";
             Log.d("HomeFragment", "removeBlueDotForDateRange savedDates regex = " + regex);
             pattern = Pattern.compile(regex);
 
