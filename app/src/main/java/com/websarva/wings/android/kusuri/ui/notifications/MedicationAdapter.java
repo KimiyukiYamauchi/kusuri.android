@@ -249,7 +249,8 @@ public class MedicationAdapter extends RecyclerView.Adapter<MedicationAdapter.Me
     }
 
     private void cancelDailyNotification(int cnt, int daycnt, long medication_id) {
-        Log.d("MedicationReminder", "cancelDailyNotification cnt　= " + cnt + " daycnt = " + daycnt + " medication_id = " + medication_id);
+        Log.d("MedicationReminder", "cancelDailyNotification cnt　= " + cnt +
+                " daycnt = " + daycnt + " medication_id = " + medication_id);
 
         int id = (int)medication_id*1000 + daycnt*10 + cnt;
         // PendingIntentを再作成し、キャンセルする

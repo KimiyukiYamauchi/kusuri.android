@@ -94,7 +94,7 @@ public class HomeFragment extends Fragment {
                     int month = startCal.get(Calendar.MONTH) + 1;
                     int day = startCal.get(Calendar.DAY_OF_MONTH);
 
-                    daysToDecorate.add(CalendarDay.from(year, month, day));
+                    getDaysToDecorate(daysToDecorate).add(CalendarDay.from(year, month, day));
                     startCal.add(Calendar.DAY_OF_MONTH, 1);
                 }
             }
@@ -111,6 +111,10 @@ public class HomeFragment extends Fragment {
         }).start();
 
         updateCalendarMarker();
+    }
+
+    private static List<CalendarDay> getDaysToDecorate(List<CalendarDay> daysToDecorate) {
+        return daysToDecorate;
     }
 
     private void loadMedicationCheckBoxesForSelectedDate(CalendarDay selectedDate) {
